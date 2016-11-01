@@ -7,4 +7,8 @@ class Sensor
   field :description, :type => Text
 
   has_many :weathers
+
+  def last_weather
+    weathers.order_by(:created_at => :desc).limit(1).first
+  end
 end

@@ -8,13 +8,13 @@
       <h4><%= link_to sensor.name, sensor %></h4>
       <div class="values">
         <div class="temperature">
-          12.62<span>°C</span>
+          <%= sensor.last_weather.temperature %><span>°C</span>
         </div>
         <div class="pressure">
-          1013.35<span>hPa</span>
+          <%= sensor.last_weather.pressure %><span>hPa</span>
         </div>
         <div class="humidity">
-          53.36<span>%</span>
+          <%= sensor.last_weather.humidity %><span>%</span>
         </div>
       </div>
     </div>
