@@ -4,17 +4,20 @@
 
 <div class="sensors">
   <% @sensors.each do |sensor| %>
-    <div class="sensor" id="sensor-<%= sensor.id%>">
+    <div class="sensor" id="sensor-<%= sensor.id %>">
       <h4><%= link_to sensor.name, sensor %></h4>
       <div class="values">
         <div class="temperature">
-          <%= sensor.last_weather.temperature %><span>°C</span>
+          <span class="value"><%= sensor.last_weather.temperature %></span>
+          <span class="unit">°C</span>
         </div>
         <div class="pressure">
-          <%= sensor.last_weather.pressure %><span>hPa</span>
+          <span class="value"><%= sensor.last_weather.pressure %></span>
+          <span class="unit">hPa</span>
         </div>
         <div class="humidity">
-          <%= sensor.last_weather.humidity %><span>%</span>
+          <span class="value"><%= sensor.last_weather.humidity %></span>
+          <span class="unit">%</span>
         </div>
       </div>
     </div>

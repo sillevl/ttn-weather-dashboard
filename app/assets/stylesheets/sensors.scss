@@ -32,12 +32,12 @@ $callout-margin: 0.5rem;
     .values{
       background-color: $warning-color;
       padding: 0.5em;
-    }
-    div{
-      font-size: rem-calc(32);
-      line-height: rem-calc(32);
       text-align: center;
-      span{
+      line-height: rem-calc(32);
+      .value{
+        font-size: rem-calc(32);
+      }
+      .unit{
         font-size: rem-calc(12);
         vertical-align: super;
       }
