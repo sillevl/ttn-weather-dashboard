@@ -51,3 +51,5 @@ gem 'nobrainer'
 gem 'nobrainer_streams'
 
 gem 'foundation-rails'
+gem 'chart-js-rails'
+gem 'momentjs-rails'
