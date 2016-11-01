@@ -3,6 +3,8 @@ class Sensor
   include NoBrainer::Document::Timestamps
 
   field :name, :type => String
-  field :appeui, :type => String
+  field :deveui, :type => String, unique: true
   field :description, :type => Text
+
+  has_many :weathers
 end

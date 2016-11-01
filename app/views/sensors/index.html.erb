@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Appeui</th>
+      <th>devEUI</th>
       <th>Description</th>
       <th colspan="3"></th>
     </tr>
@@ -16,7 +16,7 @@
     <% @sensors.each do |sensor| %>
       <tr>
         <td><%= sensor.name %></td>
-        <td><%= sensor.appeui %></td>
+        <td><%= sensor.deveui %></td>
         <td><%= sensor.description %></td>
         <td><%= link_to 'Show', sensor %></td>
         <td><%= link_to 'Edit', edit_sensor_path(sensor) %></td>

@@ -1,8 +1,6 @@
 class WeathersController < ApplicationController
   before_action :set_weather, only: [:show, :edit, :update, :destroy]
 
-  skip_before_action :verify_authenticity_token
-
   # GET /weathers
   # GET /weathers.json
   def index
