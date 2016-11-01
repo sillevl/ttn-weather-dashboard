@@ -1,3 +1,49 @@
 // Place all the styles related to the Sensors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'settings';
+@import 'foundation';
+
+$callout-margin: 0.5rem;
+
+.sensors{
+  @include grid-row;
+  div.sensor:nth-last-child(1) {
+    float: left;
+  }
+  .sensor{
+    @include callout(#FFF);
+    @media #{$small-up} {
+      @include grid-column(6);
+    }
+    @media #{$medium-up} {
+      @include grid-column(4);
+    }
+    @media #{$large-up} {
+      @include grid-column(3);
+    }
+    padding: 0px !important;
+    h4{
+      font-size: rem-calc(18);
+      padding: 0.5em;
+      margin: 0px;
+    }
+    .values{
+      background-color: $warning-color;
+      padding: 0.5em;
+    }
+    div{
+      font-size: rem-calc(32);
+      line-height: rem-calc(32);
+      text-align: center;
+      span{
+        font-size: rem-calc(12);
+        vertical-align: super;
+      }
+    }
+  }
+  .sensor:nth-last-child(1) {
+    float: left !important;
+  }
+}

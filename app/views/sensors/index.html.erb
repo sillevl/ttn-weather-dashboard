@@ -2,30 +2,21 @@
 
 <h1>Sensors</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>devEUI</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sensors.each do |sensor| %>
-      <tr>
-        <td><%= sensor.name %></td>
-        <td><%= sensor.deveui %></td>
-        <td><%= sensor.description %></td>
-        <td><%= link_to 'Show', sensor %></td>
-        <td><%= link_to 'Edit', edit_sensor_path(sensor) %></td>
-        <td><%= link_to 'Destroy', sensor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Sensor', new_sensor_path %>
+<div class="sensors">
+  <% @sensors.each do |sensor| %>
+    <div class="sensor">
+      <h4><%= link_to sensor.name, sensor %></h4>
+      <div class="values">
+        <div class="temperature">
+          12.62<span>°C</span>
+        </div>
+        <div class="pressure">
+          1013.35<span>hPa</span>
+        </div>
+        <div class="humidity">
+          53.36<span>%</span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
