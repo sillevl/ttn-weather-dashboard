@@ -77,7 +77,7 @@ $(document).on "turbolinks:load", ->
     window.Chart.update()
 
   sensor_id = $('#chart').data("sensor-id")
-  console.log("data id: " + sensor_id)
+  # console.log("data id: " + sensor_id)
   $.ajax '/sensors/'+ sensor_id + '.json',
     type: 'GET'
     dataType: 'json'
