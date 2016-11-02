@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @sensor.name %>
-</p>
+<h1><small>Sensor</small> <%= @sensor.name %></h1>
+
+<canvas id="chart" data-sensor-id="<%= @sensor.id %>" width="400" height="200"></canvas>
 
 <p>
   <strong>DevEUI:</strong>
