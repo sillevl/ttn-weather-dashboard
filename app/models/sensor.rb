@@ -11,4 +11,9 @@ class Sensor
   def last_weather
     weathers.order_by(:created_at => :desc).limit(1).first
   end
+
+  def last_values
+    weathers.order_by(:created_at => :desc).limit(100).reverse
+  end
+
 end
