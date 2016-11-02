@@ -35,35 +35,49 @@ $(document).on "turbolinks:load", ->
           borderColor: "rgba(255, 206, 86, 0.8)"
           yAxisID: "y-axis-humidity"
         } ]
-    options: scales:
-      xAxes: [ {
-        type: 'time'
-        time: displayFormats:
-          'millisecond': 'HH:mm:ss'
-          'second': 'HH:mm:ss'
-          'minute': 'HH:mm:ss'
-          'hour': 'HH:mm:ss'
-          'day': 'HH:mm:ss'
-          'week': 'HH:mm:ss'
-          'month': 'HH:mm:ss'
-          'quarter': 'HH:mm:ss'
-          'year': 'HH:mm'
-      } ]
-      yAxes: [ {
-          position: "right"
-          id: "y-axis-pressure"
-          scaleType: "linear"
-      },
-      {
-          position: "left"
-          id: "y-axis-temperature"
-          scaleType: "linear"
-      },
-      {
-          position: "left"
-          id: "y-axis-humidity"
-          scaleType: "linear"
-      }]
+    options:
+      animation: false
+      scales:
+        xAxes: [ {
+          type: 'time'
+          time: displayFormats:
+            'millisecond': 'HH:mm:ss'
+            'second': 'HH:mm:ss'
+            'minute': 'HH:mm:ss'
+            'hour': 'HH:mm:ss'
+            'day': 'HH:mm:ss'
+            'week': 'HH:mm:ss'
+            'month': 'HH:mm:ss'
+            'quarter': 'HH:mm:ss'
+            'year': 'HH:mm'
+        } ]
+        yAxes: [ {
+            position: "right"
+            id: "y-axis-pressure"
+            scaleType: "linear"
+            ticks: {
+              suggestedMax: 1050
+              suggestedMin: 950
+            }
+        },
+        {
+            position: "left"
+            id: "y-axis-temperature"
+            scaleType: "linear"
+            ticks: {
+              suggestedMax: 30
+              suggestedMin: 10
+            }
+        },
+        {
+            position: "left"
+            id: "y-axis-humidity"
+            scaleType: "linear"
+            ticks: {
+              suggestedMax: 90
+              suggestedMin: 10
+            }
+        }]
 
   ctx = document.getElementById('chart').getContext('2d')
 
