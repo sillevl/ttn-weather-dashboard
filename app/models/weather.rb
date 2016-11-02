@@ -6,5 +6,5 @@ class Weather
   field :humidity, :type => Float
   field :pressure, :type => Float
 
-  belongs_to :sensor, required: true
+  belongs_to :sensor, required: true, index: true
 end
