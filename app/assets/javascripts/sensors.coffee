@@ -55,28 +55,28 @@ $(document).on "turbolinks:load", ->
             position: "right"
             id: "y-axis-pressure"
             scaleType: "linear"
-            ticks: {
-              suggestedMax: 1050
-              suggestedMin: 950
-            }
+            # ticks: {
+            #   suggestedMax: 1010
+            #   suggestedMin: 990
+            # }
         },
         {
             position: "left"
             id: "y-axis-temperature"
             scaleType: "linear"
-            ticks: {
-              suggestedMax: 30
-              suggestedMin: 10
-            }
+            # ticks: {
+            #   suggestedMax: 30
+            #   suggestedMin: 20
+            # }
         },
         {
             position: "left"
             id: "y-axis-humidity"
             scaleType: "linear"
-            ticks: {
-              suggestedMax: 90
-              suggestedMin: 10
-            }
+            # ticks: {
+            #   suggestedMax: 60
+            #   suggestedMin: 40
+            # }
         }]
 
   ctx = document.getElementById('chart').getContext('2d')
