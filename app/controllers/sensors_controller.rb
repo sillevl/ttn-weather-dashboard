@@ -10,6 +10,7 @@ class SensorsController < ApplicationController
   # GET /sensors/1
   # GET /sensors/1.json
   def show
+    @last_values = @sensor.weathers.order_by(:created_at => :desc).limit(100)
   end
 
   # GET /sensors/new
