@@ -74,6 +74,12 @@ $(document).on "turbolinks:load", ->
     window.Chart.config.data.datasets[0].data.push(data.temperature)
     window.Chart.config.data.datasets[1].data.push(data.pressure)
     window.Chart.config.data.datasets[2].data.push(data.humidity)
+    while window.Chart.config.data.datasets[0].data.length > 100
+      window.Chart.config.data.datasets[0].data.shift()
+    while window.Chart.config.data.datasets[1].data.length > 100
+      window.Chart.config.data.datasets[1].data.shift()
+    while window.Chart.config.data.datasets[2].data.length > 100
+      window.Chart.config.data.datasets[2].data.shift()
     window.Chart.update()
 
   sensor_id = $('#chart').data("sensor-id")
