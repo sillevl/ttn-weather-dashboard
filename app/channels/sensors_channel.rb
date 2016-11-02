@@ -3,9 +3,7 @@ class SensorsChannel < ApplicationCable::Channel
   include NoBrainer::Streams
 
   def subscribed
-    # stream_from "some_channel"
-    puts "****************"
-    stream_from Weather.all
+    stream_from Sensor.find(params[:id]).weathers
   end
 
   def unsubscribed
