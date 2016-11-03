@@ -5,41 +5,48 @@
 @import 'settings';
 @import 'foundation';
 
-$callout-margin: 0.5rem;
+// $callout-margin: 0.5rem;
+// $column-gutter: rem-calc(30);
+$grid-column-gutter: (
+  small: 20px,
+  medium: 30px,
+);
 
 .sensors{
-  @include grid-row;
+  @include flex-grid-row;
   div.sensor:nth-last-child(1) {
     float: left;
   }
   .sensor{
-    @include callout(#FFF);
     @media #{$small-up} {
-      @include grid-column(6);
+      @include flex-grid-column(12, 20px);
     }
     @media #{$medium-up} {
-      @include grid-column(4);
+      @include flex-grid-column(4, 20px);
     }
     @media #{$large-up} {
-      @include grid-column(3);
+      @include flex-grid-column(3, 20px);
     }
-    padding: 0px !important;
-    h4{
-      font-size: rem-calc(18);
-      padding: 0.5em;
-      margin: 0px;
-    }
-    .values{
-      background-color: $warning-color;
-      padding: 0.5em;
-      text-align: center;
-      line-height: rem-calc(32);
-      .value{
-        font-size: rem-calc(32);
+    .information{
+      @include callout(#FFF);
+      padding: 0px;
+      h4{
+        font-size: rem-calc(18);
+        padding: 0.5em;
+        margin: 0px;
       }
-      .unit{
-        font-size: rem-calc(12);
-        vertical-align: super;
+      .values{
+        background-color: $warning-color;
+        // padding: 0.5em;
+        text-align: center;
+        line-height: rem-calc(32);
+        .value{
+          font-size: rem-calc(32);
+        }
+        .unit{
+          font-size: rem-calc(12);
+          vertical-align: super;
+        }
       }
     }
   }
