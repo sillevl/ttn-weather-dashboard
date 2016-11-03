@@ -103,7 +103,7 @@ $(document).on "turbolinks:load", ->
     dataType: 'json'
     success: (data, textStatus, jqXHR) ->
       # $('body').append "Successful AJAX call: #{JSON.stringify(data)}"
-      for weather in data.last_values
+      for weather in data.last_values.reverse()
         window.Chart.addData(
           {
             temperature: weather.temperature
