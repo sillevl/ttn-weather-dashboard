@@ -9,11 +9,13 @@ class Sensor
   has_many :weathers
 
   def last_weather
-    weathers.order_by(:created_at => :desc).limit(1).first
+    @last_weather ||= weathers.last
+    puts @last_weather.created_at
+    @last_weather
   end
 
   def last_values
-    weathers.order_by(:created_at => :desc).limit(100).reverse
+    @last_values ||= weathers.reverse_order.limit(100)
   end
 
 end
