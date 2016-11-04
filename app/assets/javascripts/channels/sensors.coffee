@@ -19,3 +19,6 @@ $(document).on "turbolinks:load", ->
           timestamp: moment(data.new_val.created_at)
         }
       )
+      $('#current-temperature-value').text(data.new_val.temperature)
+      $('#current-humidity-value').text(data.new_val.humidity)
+      $('#current-pressure-value').text(data.new_val.pressure)

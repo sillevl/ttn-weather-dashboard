@@ -2,6 +2,27 @@
 
 <h1><small>Sensor</small> <%= @sensor.name %></h1>
 
+<div class="row">
+  <div class="column small-10 small-offset-1 medium-3 medium-offset-1 large-2 large-offset-2">
+    <div class="temperature-box">
+      <div class="value" id="current-temperature-value"><%= @sensor.last_weather.temperature %></div>
+      <div class="unit">°C</div>
+    </div>
+  </div>
+  <div class="column small-10 small-offset-1 medium-3 medium-offset-0 large-2 large-offset-1">
+    <div class="humidity-box">
+      <div class="value" id="current-humidity-value"><%= @sensor.last_weather.humidity %></div>
+      <div class="unit">%</div>
+    </div>
+  </div>
+  <div class="column small-10 small-offset-1 medium-3 medium-offset-0 large-2 large-offset-1 end">
+    <div class="pressure-box">
+      <div class="value" id="current-pressure-value"><%= @sensor.last_weather.pressure %></div>
+      <div class="unit">hPa</div>
+    </div>
+  </div>
+</div>
+
 <canvas id="chart" data-sensor-id="<%= @sensor.id %>" width="400" height="200"></canvas>
 
 <p>

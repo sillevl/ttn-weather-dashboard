@@ -12,6 +12,18 @@ $grid-column-gutter: (
   medium: 30px,
 );
 
+@mixin weather-box(){
+  text-align: center;
+  line-height: rem-calc(32);
+  .value{
+    font-size: rem-calc(32);
+  }
+  .unit{
+    font-size: rem-calc(12);
+    vertical-align: super;
+  }
+}
+
 .sensors{
   @include flex-grid-row;
   div.sensor:nth-last-child(1) {
@@ -36,21 +48,28 @@ $grid-column-gutter: (
         margin: 0px;
       }
       .values{
+        @include weather-box;
         background-color: $warning-color;
-        // padding: 0.5em;
-        text-align: center;
-        line-height: rem-calc(32);
-        .value{
-          font-size: rem-calc(32);
-        }
-        .unit{
-          font-size: rem-calc(12);
-          vertical-align: super;
-        }
       }
     }
   }
   .sensor:nth-last-child(1) {
     float: left !important;
   }
+}
+
+.temperature-box{
+  @include callout();
+  @include weather-box;
+  background-color: rgba(255, 99, 132, 0.5);
+}
+.pressure-box{
+  @include callout();
+  @include weather-box;
+  background-color: rgba(54, 162, 235, 0.5);
+}
+.humidity-box{
+  @include callout();
+  @include weather-box;
+  background-color: rgba(255, 206, 86, 0.5);
 }
