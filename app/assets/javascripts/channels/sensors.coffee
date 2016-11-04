@@ -19,6 +19,11 @@ $(document).on "turbolinks:load", ->
           timestamp: moment(data.new_val.created_at)
         }
       )
+      window.Chart.config.data.datasets[0].data.shift()
+      window.Chart.config.data.datasets[1].data.shift()
+      window.Chart.config.data.datasets[2].data.shift()
+      window.Chart.config.data.labels.shift()
+      window.Chart.update()
       $('#current-temperature-value').text(data.new_val.temperature)
       $('#current-humidity-value').text(data.new_val.humidity)
       $('#current-pressure-value').text(data.new_val.pressure)
