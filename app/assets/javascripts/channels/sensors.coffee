@@ -1,4 +1,4 @@
-$(document).on "turbolinks:load", ->
+$ ->
   App.sensors = App.cable.subscriptions.create {
       channel: "SensorsChannel",
       id: $('#chart').data("sensor-id")

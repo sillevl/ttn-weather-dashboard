@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on "turbolinks:load", ->
+$ ->
   config =
     type: 'line'
     data:
@@ -105,7 +105,7 @@ $(document).on "turbolinks:load", ->
     #   window.Chart.config.data.datasets[2].data.shift()
     # while window.Chart.config.data.labels.length > 360
     #   window.Chart.config.data.labels.shift()
-    
+
     window.Chart.update()
 
   sensor_id = $('#chart').data("sensor-id")
