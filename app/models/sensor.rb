@@ -15,7 +15,13 @@ class Sensor
   end
 
   def last_values
-    @last_values ||= weathers.reverse_order.limit(100)
+    @last_values ||= weathers.where(
+      lambda { |doc|
+        puts doc[:created_at].time.methods
+        # doc[:created_at].to_epoch_time.gt(Time.now - 12.2.hours)
+        doc[:created_at].during(Time.now - 1.hours, Time.now)
+      }
+    )
   end
 
 end
