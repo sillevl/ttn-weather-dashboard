@@ -18,7 +18,7 @@ class Sensor
     between
   end
 
-  def between(start_time = Time.now - 2.hours, end_time = Time.now)
+  def between(start_time = Time.now - 1.hours, end_time = Time.now)
     weathers.where(
       lambda { |doc|
         doc[:created_at].during(start_time, end_time)
