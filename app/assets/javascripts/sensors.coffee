@@ -16,6 +16,9 @@ $(document).on "turbolinks:load", ->
           backgroundColor: "rgba(255, 99, 132, 0.8)"
           borderColor: "rgba(255, 99, 132, 0.8)"
           yAxisID: "y-axis-temperature"
+          lineTension: 0
+          pointRadius: 0
+          pointHitRadius: 10
         },
         {
           label: "Pressure"
@@ -25,6 +28,9 @@ $(document).on "turbolinks:load", ->
           backgroundColor: "rgba(54, 162, 235, 0.8)"
           borderColor: "rgba(54, 162, 235, 0.8)"
           yAxisID: "y-axis-pressure"
+          lineTension: 0
+          pointRadius: 0
+          pointHitRadius: 10
         },
         {
           label:"Humidity"
@@ -34,6 +40,9 @@ $(document).on "turbolinks:load", ->
           backgroundColor: "rgba(255, 206, 86, 0.8)"
           borderColor: "rgba(255, 206, 86, 0.8)"
           yAxisID: "y-axis-humidity"
+          lineTension: 0
+          pointRadius: 0
+          pointHitRadius: 10
         } ]
     options:
       animation: false
