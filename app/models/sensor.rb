@@ -15,13 +15,24 @@ class Sensor
   end
 
   def last_values
-    @last_values ||= weathers.where(
+    between
+  end
+
+  def between(start_time = Time.now - 2.hours, end_time = Time.now)
+    weathers.where(
       lambda { |doc|
-        puts doc[:created_at].time.methods
-        # doc[:created_at].to_epoch_time.gt(Time.now - 12.2.hours)
-        doc[:created_at].during(Time.now - 1.hours, Time.now)
+        doc[:created_at].during(start_time, end_time)
       }
     )
+  end
+
+  def between_grouped(start_time = Time.now - 1.hours, end_time = Time.now, step = 1.minute)
+    #method not finished !!!! WIP !!!!!!
+    NoBrainer.run { |r|
+      between(start_time, end_time).to_rql.group { |g|
+        g[:created_at].date
+      }
+    }
   end
 
 end
